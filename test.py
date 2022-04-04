@@ -20,7 +20,7 @@ if __name__ == "__main__":
     X_test, y_test = load_data('mnist_test.csv')
     
     # 模型测试
-    NN = NeuralNetwork(X_train, y_train, X_test, y_test, lr=0.01, wd=1e-5, hidden_neuron=64) 
+    NN = NeuralNetwork(X_train, y_train, X_test, y_test, lr=0.02, wd=1e-4, hidden_neuron=256) 
     NN.load()
     NN.test(X_test, y_test)
     NN.param_plot()

@@ -27,6 +27,10 @@ conda install numpy
 pip install matplotlib
 ```
 
+* Download dataset and weight results in this link: https://pan.baidu.com/s/1a790cBBdZ20OtlktTI0V3A Password:j3rx
+
+* You can also download dataset in: https://pjreddie.com/projects/mnist-in-csv/ or https://www.kaggle.com/datasets/oddrationale/mnist-in-csv
+
 * Run the training code directly to train the model with given hyper-parameters
 ```
 python train.py
