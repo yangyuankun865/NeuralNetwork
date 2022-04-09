@@ -75,8 +75,8 @@ class NeuralNetwork:
         self.W2 = self.W2 - self.lr * (DW2 + self.W2 * self.wd)
         self.W1 = self.W1 - self.lr * (DW1 + self.W1 * self.wd)
         
-        self.b2 = self.b2 - self.lr * (db2 + self.b2 * self.wd)
-        self.b1 = self.b1 - self.lr * (db1 + self.b1 * self.wd)
+        self.b2 = self.b2 - self.lr * db2
+        self.b1 = self.b1 - self.lr * db1
 
     def train(self):
         iteration = 0
@@ -95,7 +95,7 @@ class NeuralNetwork:
                 self.y = self.target[start:end]
                 # print("self.x",self.x.shape, "self.y",self.y.shape)
                 self.feedforward()
-                l += -(self.y*np.log(self.a2+1e-8)).sum() + self.wd * ((self.W1*self.W1).sum() + (self.W2*self.W2).sum() + np.inner(self.b1,self.b1) + np.inner(self.b2,self.b2))
+                l += -(self.y*np.log(self.a2+1e-8)).sum() + self.wd * ((self.W1*self.W1).sum() + (self.W2*self.W2).sum())
                 self.backprop()
                 acc += np.count_nonzero(np.argmax(self.a2,axis=1) == np.argmax(self.y,axis=1)) / self.batch
                 iteration +=1
