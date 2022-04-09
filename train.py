@@ -27,7 +27,6 @@ if __name__ == "__main__":
     np.random.seed(123)
     X_train, y_train = load_data('mnist_train.csv')
     X_test, y_test = load_data('mnist_test.csv')
-    
     # 模型训练
     for wd in [1e-5, 1e-4, 1e-3]:
         NN = NeuralNetwork(X_train, y_train, X_test, y_test, lr=args.lr, wd=args.wd, hidden_neuron=args.hidden_neuron) 

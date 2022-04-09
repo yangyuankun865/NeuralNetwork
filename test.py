@@ -18,7 +18,6 @@ def load_data(path):
 if __name__ == "__main__":
     X_train, y_train = load_data('mnist_train.csv')
     X_test, y_test = load_data('mnist_test.csv')
-    
     # 模型测试
     NN = NeuralNetwork(X_train, y_train, X_test, y_test, lr=0.02, wd=1e-4, hidden_neuron=256) 
     NN.load()
